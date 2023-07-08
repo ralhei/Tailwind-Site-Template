@@ -1,4 +1,4 @@
-NPX = npx16
+NPX = npx
 DEPLOYMENT_TARGET = MY_RSYNC_TARGET   # <---- replace this, e.g. "mu:web/open-gate.eu"
 
 all:
@@ -15,6 +15,11 @@ dev-build:
 
 sync: css
 	rsync -a -v -P --exclude-from .rsync.exclude . $(DEPLOYMENT_TARGET)
+
+
+watch-css:
+	# Run this target while developing pages in the editor - creates required css on-the-fly
+	$(NPX) tailwindcss -i site/css/src/tailwind.css -o site/css/tailwind.css --watch
 
 
 clean:

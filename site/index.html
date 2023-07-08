@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="de">
+<html lang="de" class="h-full">
 <head>
     <title>Website title</title>
     <meta name="description" content="Description of this website">
@@ -22,19 +22,104 @@
 
     <!--  <link rel="manifest" href="site.webmanifest">-->
     <link rel="icon" type="image/png" href="/img/favicon.png" sizes="192x192">
-    <link href="/css/tailwind.min.css" rel="stylesheet">
+    <link href="/css/tailwind.css" rel="stylesheet">
     <style>
-        body { }
+        .menuentry {
+            /* Menu icon and entries are colored here to adjust them for background image colors easily */
+            color: darkslateblue;
+            border-color: darkslateblue;
+        }
     </style>
 </head>
-<body class="bg-white">
+
+<body class="bg-white h-full">
+
+<nav class="absolute w-full mt-12 flex justify-end">
+  <div class="mr-8">
+    <div class="md:hidden flex justify-end mb-4">
+      <button id="menu" class="inline-block">
+        <svg xmlns="http://www.w3.org/2000/svg"
+             class="toggle rounded-md border-2 h-7 w-7 menuentry"
+             fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+        <svg xmlns="http://www.w3.org/2000/svg"
+             class="toggle hidden rounded-md border-2 h-7 w-7 menuentry"
+             fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+        </svg>
+      </button>
+    </div>
+    <div class="toggle hidden md:block text-xl text-bold text-right">
+      <a href="/ueber-mich/"
+         class="block md:inline-block md:px-3 py-2 menuentry">Über mich</a>
+      <a href="/kontakt"
+         class="block md:inline-block md:px-3 py-2 menuentry">Kontakt</a>
+    </div>
+  </div>
+
+  <div class="fixed bottom-0 right-2 text-white bg-black bg-opacity-60 px-3 pt-2 rounded-t-md cursor-pointer"
+       title="Nach oben" onclick="toTop()">
+    ^
+  </div>
+</nav>
+
 <div class="flex justify-center items-center h-screen">
     <div class="w-3/4 md:w-1/2 text-center">
-        <p class="text-4xl my-8"content="">hello</p>
+        <p class="text-4xl"content="">hello</p>
     </div>
 </div>
-<div class="text-center text-sm pb-4">
-    <a href="/impressum">Impressum</a>
-</div>
+
+<footer class="text-sm px-4 md:px-16 py-16" style="background-color: #07182b;">
+  <div class="section-content flex-grow text-gray-300">
+    <div id="kontakt">
+      <p class="pb-6 text-2xl font-heading font-bold text-white">
+        MySite
+      </p>
+      <p class="pb-6 text-lg font-heading font-bold text-white">
+        Mysite subtitle
+      </p>
+    </div>
+
+    <div class="flex flex-wrap md:flex-nowrap gap-y-3 gap-x-4 font-medium text-sm leading-8">
+      <div class="w-full">
+        <p class="text-lg text-white mb-2">Kontakt:</p>
+        <div class="leading-normal mb-2">
+          MySite<br/>
+          MyName<br/>
+          MyAddress<br/>
+        </div>
+        <a href="tel:+xxxx">+xxxx</a><br/>
+        <a href="mailto:info@mysite.net">info@mysite.net</a>
+      </div>
+
+      <div class="w-full">
+        <p class="text-lg text-white mb-2">MyPlace:</p>
+        <a href="/ueber-mich/">Über mich</a><br/>
+        <a href="/ueber-mich#raeume">Meine Räume</a><br/>
+      </div>
+
+      <div class="w-full">
+        <p class="text-lg text-white mb-2">Rechtliches:</p>
+        <a href="/datenschutz/">Datenschutzerklärung</a><br/>
+        <a href="/impressum/">Impressum</a>
+      </div>
+    </div>
+
+  <script>
+    document.getElementById("menu").onclick = function toggleMenu() {
+      const navToggle = document.getElementsByClassName("toggle");
+      for (let i = 0; i < navToggle.length; i++) {
+        navToggle.item(i).classList.toggle("hidden");
+      }
+    };
+    function toTop() {  // for the sticky scroll button in the lower right corner
+      document.body.scrollTop = 0; // For Safari
+      document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+    }
+  </script>
+
+</footer>
+
 </body>
 </html>
