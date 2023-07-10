@@ -6,3 +6,9 @@
 html {
     scroll-behavior: smooth;
 }
+
+/* Ensure proper indentation if li-elements contain multi-line content */
+ul.list-outside > li {
+    margin-left: 1rem;
+    margin-top: 0.5rem;
+}
