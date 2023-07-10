@@ -1,60 +1,66 @@
 <!doctype html>
 <html lang="de" class="h-full">
 <head>
-    <title>Website title</title>
-    <meta name="description" content="Description of this website">
+    <title>Page title</title>
+    <meta name="description" content="Description of this page">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- Facebook Meta Tags -->
-    <meta property="og:url" content="https://your website url.zzz">
+    <meta property="og:url" content="https://your webpage url.zzz/subpage">
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Website title">
-    <meta property="og:description" content="Description of this website">
-    <meta property="og:image" content="https://your website url.zzz/ogen-graph-image-1200x800.jpg">
+    <meta property="og:title" content="Page title">
+    <meta property="og:description" content="Description of this (sub)page">
+    <meta property="og:image" content="https://your website url.zzz/open-graph-image-1200x630.jpg">
     <!-- Twitter Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta property="twitter:domain" content="your website domain.zzz">
-    <meta property="twitter:url" content="https://your website url.zzz">
+    <meta property="twitter:domain" content="your domain.zzz">
+    <meta property="twitter:url" content="https://your webpage url.zzz/subpage">
     <meta name="twitter:title" content="Website title">
-    <meta name="twitter:description" content="Description of this website">
-    <meta name="twitter:image" content="https://your website url.zzz/ogen-graph-image-1200x800.jpg">
+    <meta name="twitter:description" content="Description of this sub(page)">
+    <meta name="twitter:image" content="https://your website url.zzz/open-graph-image-1200x630.jpg">
 
     <!--  <link rel="manifest" href="site.webmanifest">-->
     <link rel="icon" type="image/png" href="/img/favicon.png" sizes="192x192">
     <link href="/css/tailwind.css" rel="stylesheet">
     <style>
-        .menuentry {
+        .menu-entries {
+        }
+        .menu-entry {
             /* Menu icon and entries are colored here to adjust them for background image colors easily */
             color: darkslateblue;
             border-color: darkslateblue;
+        }
+        .menu-entry:hover {
+            color: yellow;
+            border-color: yellow;
         }
     </style>
 </head>
 
 <body class="bg-white h-full">
 
-<nav class="absolute w-full mt-12 flex justify-end">
-  <div class="mr-8">
-    <div class="md:hidden flex justify-end mb-4">
+<nav class="absolute w-full mt-12 flex justify-center">
+  <div class="max-w-6xl w-full">
+    <div class="md:hidden flex justify-end mb-4 pr-4">
       <button id="menu" class="inline-block">
         <svg xmlns="http://www.w3.org/2000/svg"
-             class="toggle rounded-md border-2 h-7 w-7 menuentry"
+             class="toggle rounded-md border-2 h-7 w-7 menu-entry"
              fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path stroke-linecap="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
         </svg>
         <svg xmlns="http://www.w3.org/2000/svg"
-             class="toggle hidden rounded-md border-2 h-7 w-7 menuentry"
+             class="toggle hidden rounded-md border-2 h-7 w-7 menu-entry"
              fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path stroke-linecap="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
         </svg>
       </button>
     </div>
-    <div class="toggle hidden md:block text-xl text-bold text-right">
+    <div class="toggle hidden md:block text-xl text-bold text-right pr-4 menu-entries">
+      <a href="/"
+         class="block md:inline-block md:px-3 py-2 menu-entry">Home</a>
       <a href="/ueber-mich/"
-         class="block md:inline-block md:px-3 py-2 menuentry">Über mich</a>
-      <a href="/kontakt"
-         class="block md:inline-block md:px-3 py-2 menuentry">Kontakt</a>
+         class="block md:inline-block md:px-3 py-2 menu-entry">Über mich</a>
     </div>
   </div>
 
